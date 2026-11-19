@@ -1,0 +1,10 @@
+{
+  "name": "build-handoff",
+  "version": "0.3.0",
+  "description": "Plan in one session, build in a fresh one, with no keypress: when a turn saves a build handoff, the mod runs /clear, starts the fresh session on the handoff, and sends its requests to Sonnet.",
+  "author": { "name": "Sean Perkins", "url": "https://github.com/seanperkins" },
+  "homepage": "https://github.com/seanperkins/cc-build-handoff",
+  "repository": "https://github.com/seanperkins/cc-build-handoff",
+  "license": "MIT",
+  "keywords": ["handoff", "clear", "plan", "build", "model", "mod"]
+}

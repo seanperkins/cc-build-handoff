@@ -1,0 +1,6 @@
+{
+  "name": "cc-build-handoff",
+  "description": "build-handoff: plan in one Claude Code session, build in a fresh one, with no keypress.",
+  "owner": { "name": "Sean Perkins" },
+  "plugins": [{ "name": "build-handoff", "source": "./" }]
+}
