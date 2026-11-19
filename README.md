@@ -2,6 +2,8 @@
 
 Plan in one Claude Code session, build in a fresh one, with no keypress.
 
+Inspired by [cc-clear-handoff](https://github.com/STRML/cc-clear-handoff) by Samuel Reed ([STRML](https://github.com/STRML)), which showed how to carry a curated handoff across `/clear` with a one-shot `SessionStart` hook. This mod takes that idea and automates the rest: the `/clear` itself, the first prompt of the fresh session, and the model it builds on.
+
 When a turn saves a **build handoff**, this mod waits for that turn to end, runs `/clear`, starts the fresh session on the handoff, and sends that session's requests to Sonnet. The planning context never reaches the build model, and your saved default model is never changed.
 
 It is a Claude Code mod (a plugin of function hooks). The mod API is early access; this was built and tested on Claude Code v2.1.328.
@@ -58,7 +60,7 @@ These cost us three live runs to find:
 4. **Tie the launch to its turn.** Arm on the save, launch on the `turn.complete` with the same `turnId`, and treat any `prompt.submit` that is not yours as "the person has more to say".
 5. **The planning session's `session.end` can fire before or after the fresh session's `SessionStart`.** Keep the planning session's id, and take the fresh session's id from SessionStart's `session_id`, so routing stops on the right session's end.
 
-[cc-clear-handoff](https://github.com/STRML/cc-clear-handoff) by Samuel Reed solves the neighbouring problem (a curated alternative to `/compact`, auto-loaded after you `/clear`). Points 1 to 3 apply to automating its `/clear` and "resume" steps too.
+Points 1 to 3 apply equally to automating the `/clear` and "resume" steps of [cc-clear-handoff](https://github.com/STRML/cc-clear-handoff), Samuel Reed's curated alternative to `/compact`.
 
 ## Develop
 
